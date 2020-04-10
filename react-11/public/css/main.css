@@ -4,3 +4,141 @@
 * {
 	box-sizing: border-box;
 }
+body{
+	font-size: 12px;
+	font-family: "Montserrat", Arial, Helvetica, sans-serif;
+}
+	
+.top-container{
+	margin: 0 auto ;
+	position: relative;
+	width: 960px;
+}
+.top {
+	background-attachment: fixed;
+	background-image: url(../img/capa-madmax2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: 90vh;
+	justify-content: space-between;
+	padding: 20px;
+	position: relative;
+	width: 100%;
+}
+.top:after{
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0.6) 0%,
+		rgba(0, 212, 255, 0) 75%
+	);
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.top-menu{
+	z-index: 2;
+	display: flex;	
+}
+.top-menu .top-container{
+	align-items: center;
+	display: flex;
+	justify-content:space-between;
+
+}
+.top-logo{
+	display: inline-block;
+
+}
+.top-list{
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.top-list-item{
+	margin: 0 25px;
+}
+.top-list a{
+	text-decoration: none;
+	color: white;
+	font-weight: bold;
+}
+.top-list a:visited{
+color: white;
+}
+.top-list a:hover{
+color: yellow;
+}
+.top-user{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+.user-foto{
+	border-radius: 100%;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+	height: 45px;
+	margin-right: 15px;
+	overflow: hidden;
+	width: 45px;
+}
+.user-name{
+	color: white;
+	font-weight: bold;
+}
+.top-content{
+	width: 100%;
+}
+.top-content .top-container{
+	position: relative;
+	z-index: 2;
+}
+.top-container h2{
+	color: #fff;
+	font-size: 6em;
+	font-weight: bold;
+	line-height: 1.2em;
+	margin: 0;
+}
+.genero{
+	display: flex;
+	margin: 15px 0px 30px ;
+	font-size: 13px;
+}
+.genero-item{
+	color: white;
+	text-decoration: none;
+	margin-right:15px ;
+	transition: all 0.1s ease-in-out;
+}
+.genero-item:hover{
+	color: yellow;
+}
+.trailer-button{
+	display: inline-block;
+	padding: 15px 50px;
+	color: #000;
+	font-size: 1.5em;
+	text-decoration: none;
+	background-color: #e4bb23;
+	border-radius: 50px;
+	position: relative;
+	transition: all 0.2s ease-in-out;
+}
+.trailer-button i{
+	font-size: 1.5em;
+	position: absolute;
+	right: 15px;
+	top: 12px;
+}
+.top-info{
+	color: white;
+	padding: 20px 0;
+	font-size: 1.5em;
+
+}
