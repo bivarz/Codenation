@@ -100,7 +100,7 @@ color: yellow;
 }
 .top-container h2{
 	color: #fff;
-	font-size: 6em;
+	font-size: 5.5em;
 	font-weight: bold;
 	line-height: 1.2em;
 	margin: 0;
@@ -136,9 +136,46 @@ color: yellow;
 	right: 15px;
 	top: 12px;
 }
+.trailer-button:hover{
+	background-color: yellow;
+
+}
 .top-info{
 	color: white;
 	padding: 20px 0;
 	font-size: 1.5em;
+}
+.top-info p:nth-child(2){
+	color: orange;
+}
+.down{
+	background-color: #f2f2f2;
+	width: 100%;
+}
+.down-menu{
+	width: 100%;
+}
+.down-menu-list{
+	align-items: center;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+.down-menu-item {
+	margin: 0 20px;
+}
+.down-menu-item a{
+	color: #f3be00;
+	display: inline-block;
+	padding: 25px 0;
+	text-decoration: none;
+	font-weight: bold;
+}
+.down-menu-item a:hover{
+	color:orange ;
+	box-shadow: inset 0 -1px 0 orange;
 
 }
