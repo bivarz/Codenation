@@ -13,10 +13,17 @@ const promotions = ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
 				discountValue: ,
 				discountPercetage:,
  */
+/**
+ * Filter => (elemen, index , array)
+ * Map => (current value, index , array)
+ * Reduce => (acumulator, initialValue,index,array)  
+ */
 
-map()
+
 //getPromotion recebe um novo array com as categorias para poder calcular a promoção.
-const getPromotion= products => promotions => [new Set(products.map(product => product.category)).size]
+const numbOfItens= products => [new Set(products.map(product => product.category)).size]
+
+
 
 //getCartProducts recebe os produtos da lista de ids que serão passados para saber quais itens foram "comprados"
 const getCartProducts = (ids, productsList) => productsList.filter(product => ids.includes(product.id) )
