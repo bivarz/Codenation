@@ -20,8 +20,6 @@ const promotions = ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
  */
 
 
-//getPromotion recebe um novo array com as categorias para poder calcular a promoção.
-const numbOfItens= products => [new Set(products.map(product => product.category)).size]
 
 
 
