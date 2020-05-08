@@ -36,11 +36,29 @@ products= [
         "price": 119.99
       }
     ]
+  },
+  {
+    "id": 110,
+    "name": "PINK PANTHER™ T-SHIRT",
+    "category": "T-SHIRT",
+    "regularPrice": 124.99,
+    "promotions": [
+      {
+        "looks": ["SINGLE LOOK", "DOUBLE LOOK"],
+        "price": 124.99
+      },
+      {
+        "looks": ["TRIPLE LOOK", "FULL LOOK"],
+        "price": 109.99
+      }
+    ]
   }
 ]
 
-mySet = products => promo[[new Set(products.map(product => product.di)).size -1]]
-mySet2 = new Set(products.map(product => product.category)).size
+getProducts = (ids,productsList)=>{
+}
+
+mySet2 = products => promotions[ new Set(products.map(product => product.category)).size]
 
 myCart = (ids, productsList) =>productsList.filter(product =>ids.includes(product.id))
 var pr = products[0].id
