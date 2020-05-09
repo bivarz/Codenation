@@ -401,22 +401,21 @@
   */
 
     const promotions= ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
-    
     const productsFilter = products.filter(product => ids.includes(product.id))
-    // promotionType recebe um nome dentro do array promotion[i] onde new set vai dizer a posição no array.
-    const promotionType = product => promotions[[new Set(productsFilter.map(product => product.category)).size-1]]
+    
+    const promotionType = promotions[new Set(productsFilter.map(product => product.category)).size-1]
+    const regularPrice = productsFilter.reduce((acc,regPrice) => acc + regPrice.regularPrice,0)
+    const promoFiltered = productsFilter.map(promo => promo.promotions)
+    const choicePromo = promoFiltered
    
-    const promoName = promotions[promotionType -1]
-
-  
-    const regularPrice = productsFilter.reduce((acc,regPrice) => {return acc + regPrice.regularPrice},0)
     
 
 
-console.log(productsFilter)
-console.log(promotionType)
-console.log(promoName);
-console.log(regularPrice);
+//console.log(promotionType)
 
+//console.log(regularPrice);
+
+//console.log(promoFiltered);
+console.log(choicePromo)
 
 

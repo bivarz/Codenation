@@ -18,13 +18,18 @@ const promotions = ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
  * Map => (current value, index , array)
  * Reduce => (acumulator, initialValue,index,array)  
  */
+const promotions= ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
+const productsFilter = (ids,productsList) => productsList.filter(product => ids.includes(product.id))
+const promotionType = [new Set(productsFilter.map(product => product.category)).size]
+const regularPrice = productsFilter.reduce((acc,regPrice) => {return acc + regPrice.regularPrice},0)
+const promoName = promotions[promotionType -1]
+const getTotalPrice = (promotion, products) => 
+			products.reduce((totalPrice, nextProduct) => {
+			const promotionPrice = nextProduct.promotions.find(promo => promo.looks.includes(promotion)) || [];
+			return totalPrice += promotionPrice.price || nextProduct.regularPrice;
+		}, 0)
 
 
-
-
-
-//getCartProducts recebe os produtos da lista de ids que serão passados para saber quais itens foram "comprados"
-const getCartProducts = (ids, productsList) => productsList.filter(product => ids.includes(product.id) )
 
 
 
