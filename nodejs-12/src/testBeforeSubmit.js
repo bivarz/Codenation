@@ -1,5 +1,5 @@
 
-  const products = [
+  products = [
     {
       "id": 110,
       "name": "PINK PANTHER™ T-SHIRT",
@@ -390,7 +390,7 @@
     }
   ]
 
-  ids = [130, 140, 230,110]
+  ids = [130, 330, 230,470]
 
   /**
    * const productsFiltered = []
@@ -407,15 +407,25 @@
     const regularPrice = productsFilter.reduce((acc,regPrice) => acc + regPrice.regularPrice,0)
     const promoFiltered = productsFilter.map(promo => promo.promotions)
     const choicePromo = promoFiltered
-   
     
 
+    arr = productsFilter.map(products => products.promotions)
+    arr2 = arr.flat()
+    arr3 = arr2.filter(promo => promo.looks.includes(promotionType))
+    
 
-//console.log(promotionType)
+  
+  //console.log(arr2);
+  //console.log(promotionType)
+  //console.log(productsFilter)
+  console.log(choicePromo);
+  //console.log(promoFiltered);
+  //console.log(regularPrice);
 
-//console.log(regularPrice);
 
-//console.log(promoFiltered);
-console.log(choicePromo)
+
+
+
+//console.log(choicePromo)
 
 
