@@ -390,7 +390,7 @@
     }
   ]
 
-  ids = [130, 140, 230, 260]
+  ids = [130, 140, 230,110]
 
   /**
    * const productsFiltered = []
@@ -399,10 +399,14 @@
      productsFiltered.push(productsFilter)
     }
   */
-    const productsFilter = products.filter(p => ids.includes(p.id))
-
-
-
+    const productsFilter = products.filter(product => ids.includes(product.id))
+    const promotionType = new Set(productsFilter.map(product => product.category)).size
+    const regularPrice = productsFilter.reduce((acc,regPrice) => {return acc + regPrice.regularPrice},0)
+    
 
 
 console.log(productsFilter)
+console.log(promotionType)
+console.log(regularPrice);
+
+
