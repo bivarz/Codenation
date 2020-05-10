@@ -390,7 +390,7 @@
     }
   ]
 
-  ids = [130, 330, 230,470]
+  ids = [110, 130, 140, 230, 310, 330]
 
   /**
    * const productsFiltered = []
@@ -414,12 +414,18 @@
     const promoFiltered = productsFilter.map(promo => promo.promotions)
     const discountValue = (regularPrice - getDiscount)
     const discount = discountValue*100/regularPrice
-   
-    console.log(`totalPrice: R$ ${getDiscount}`);
-    console.log(`discountValue: R$ ${discountValue}`)
-    console.log(`discount: R$ ${discount.toFixed(2)}%`)
-    console.log(getName)
 
+    
+    
+    const carrinho = {
+    'products': getName,
+		'promotion': promotionType,
+		'totalPrice': getDiscount,
+		'discountValue': discountValue,
+		'discount': `${discount.toFixed(2)}%`
+    }
+
+    console.log(carrinho);
 
     arr = productsFilter.map(products => products.promotions)
     arr2 = arr.flat()
