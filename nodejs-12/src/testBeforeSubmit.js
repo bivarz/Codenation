@@ -402,23 +402,35 @@
 
     const promotions= ['SINGLE LOOK', 'DOUBLE LOOK', 'TRIPLE LOOK', 'FULL LOOK'];
     const productsFilter = products.filter(product => ids.includes(product.id))
-    
+    const getName = productsFilter.map(product =>({name: product.name, category:product.category}))
     const promotionType = promotions[new Set(productsFilter.map(product => product.category)).size-1]
+    const getDiscount = productsFilter.reduce((tP,nP)=> {
+      const promotionPrice = nP.promotions.find(promo => promo.looks.includes(promotionType)) || [];
+      return tP += promotionPrice.price || nP.regularPrice;
+    },0)
+   
+   
     const regularPrice = productsFilter.reduce((acc,regPrice) => acc + regPrice.regularPrice,0)
     const promoFiltered = productsFilter.map(promo => promo.promotions)
-    const choicePromo = promoFiltered
-    
+    const discountValue = (regularPrice - getDiscount)
+    const discount = discountValue*100/regularPrice
+   
+    console.log(`totalPrice: R$ ${getDiscount}`);
+    console.log(`discountValue: R$ ${discountValue}`)
+    console.log(`discount: R$ ${discount.toFixed(2)}%`)
+    console.log(getName)
+
 
     arr = productsFilter.map(products => products.promotions)
     arr2 = arr.flat()
     arr3 = arr2.filter(promo => promo.looks.includes(promotionType))
     
 
-  
+
   //console.log(arr2);
   //console.log(promotionType)
   //console.log(productsFilter)
-  console.log(choicePromo);
+  //console.log(choicePromo);
   //console.log(promoFiltered);
   //console.log(regularPrice);
 
