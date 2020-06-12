@@ -19,4 +19,3 @@ const PrivateRoute = ({ comp: Component, ...rest }) => {
 }
 
 export default PrivateRoute;
-
